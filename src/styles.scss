@@ -1,1 +1,215 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    display: contents;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.layout {
+    min-height: 100vh;
+    background: url("https://r4.wallpaperflare.com/wallpaper/535/845/69/digital-art-artwork-fantasy-art-planet-sun-hd-wallpaper-d866fd38b0b06cd800cc016ed8d284fa.jpg"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0px;
+        li {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0px;
+            a {
+                .active {
+                    color: #46b0e6;
+                }
+            }
+        }
+    }
+}
+
+.main {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+}
+
+.config-panel {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    transform: translateY(50%);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: rgba(255, 255, 255, 0.1) -1px 1px 1px 0, rgba(255, 255, 255, 0.1) 0 -1px 1px 0, rgba(0, 0, 0, 0.1) -1px 0 20px 5px;
+    background-color: rgba(40, 40, 40, 0.25);
+    backdrop-filter: blur(10px);
+    a {
+        align-items: center;
+        border: 1px solid transparent;
+        color: #fff;
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        margin-top: 1px;
+        position: relative;
+        width: 50px;
+    }
+}
+
+.switchuser {
+    align-items: center;
+    background: rgba(0,0,0,.5);
+    border-radius: 0 9px 0 0;
+    border-right: 2px solid hsla(0,0%,100%,.15);
+    border-top: 2px solid hsla(0,0%,100%,.15);
+    bottom: 0;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.4);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    justify-content: center;
+    left: 0;
+    line-height: 1.5;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    .user-img {
+        border-radius: 50%;
+        margin-bottom: 5px;
+        width: 50px;
+    }
+    .btn {
+        background: hsla(0,0%,100%,.15);
+        border-radius: 0;
+        color: #fff;
+        font-size: 13px;
+        margin: 8px -10px -10px;
+        text-decoration: none;
+        transition: all .35s ease-in-out;
+        width: calc(100% + 22px);
+        border: none;
+        padding: 8px 12px;
+    }
+}
+
+.p-tooltip-text {
+    background-color: rgba(0,0,0,.7);   
+}
+
+.searchform {
+    align-self: flex-start;
+    box-shadow: rgba(0, 0, 0, 0.05) -1px -1px 5px 0, rgba(0, 0, 0, 0.15) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px !important;
+    border-radius: 12px;
+    background-image: none;
+    border: none;
+    outline: none;
+    background-color: rgba(119, 75, 114, 0.31) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    margin: 50px auto;
+    max-width: 50rem;
+    padding: 14px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 4;
+    form {
+        width: 100%;
+    }
+    .input-container {
+        background: transparent !important;
+        box-shadow: none !important;
+        border-radius: 5px;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    select {
+        border: none;
+        background-color: rgba(79, 25, 73, 0.58) !important;
+        text-shadow: 0 1px 0 rgba(79, 25, 73, 0.58) !important;
+        color: rgb(224, 228, 243) !important;
+        border-radius: 50px 0px 0px 50px;
+        padding: 0 10px;
+    }
+    input {
+        background-color: rgba(0, 0, 0, 0.23) !important;
+        color: rgb(205, 214, 244) !important;
+        border-radius: 0px 50px 50px 0px;
+        border: 0;
+        font-size: 15px;
+        padding: 17px 15px;
+        width: 100%;
+        height: 51px;
+    }
+    button {
+        background-color: rgba(79, 25, 73, 0.58) !important;
+        color: rgb(224, 228, 243) !important;
+        border-radius: 50px;
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 38px;
+        padding: 7px 15px;
+        position: absolute;
+        right: 0;
+        text-transform: uppercase;
+        top: 0;
+    }
+}
+
+:focus {
+    outline: none;
+}
+
+.sortable {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+}
