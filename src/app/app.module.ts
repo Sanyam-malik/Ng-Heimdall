@@ -12,6 +12,15 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { SearchWidgetComponent } from './search-widget/search-widget.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ItemsComponent } from './items/items.component';
+import { UsersComponent } from './users/users.component';
+import { LoginComponent } from './login/login.component';
+import { TagsComponent } from './tags/tags.component';
+import { ApplicationsComponent } from './applications/applications.component';
+import { CardModule } from 'primeng/card';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +29,21 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SwitchUserComponent,
     ConfigPanelComponent,
     SearchWidgetComponent,
-    DashboardComponent
+    DashboardComponent,
+    ItemsComponent,
+    UsersComponent,
+    LoginComponent,
+    TagsComponent,
+    ApplicationsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
     SidebarModule,
+    ButtonModule,
     TooltipModule,
+    TableModule,
+    CardModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
