@@ -1,4 +1,5 @@
-<div class="module-division">
+<app-switch-user></app-switch-user>
+<div>
     <section class="module-container">
         <p-card header="Applications">
             <p-table
@@ -12,10 +13,9 @@
                 >
                     <ng-template pTemplate="header">
                         <tr>
-                            <th style="width:25%">Name</th>
-                            <th style="width:25%">Country</th>
-                            <th style="width:25%">Company</th>
-                            <th style="width:25%">Representative</th>
+                            <th style="width:25%">Title</th>
+                            <th style="width:25%">Url</th>
+                            <th style="width:25%">Action</th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-customer>
@@ -23,16 +23,20 @@
                             <td>{{ customer.name }}</td>
                             <td>{{ customer.country.name }}</td>
                             <td>{{ customer.company }}</td>
-                            <td>{{ customer.representative.name }}</td>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="paginatorleft">
-                        <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+                        <p-button type="button" styleClass="p-button-text">
+                            <i class="pi pi-plus"></i>&nbsp;Add Application
+                        </p-button>
                     </ng-template>
                     <ng-template pTemplate="paginatorright">
-                        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+                        <p-button type="button" styleClass="p-button-text">
+                            <i class="pi pi-cloud"></i>&nbsp;Export Applications
+                        </p-button>
                     </ng-template>
             </p-table>
         </p-card> 
     </section>
 </div>
+<app-config-panel></app-config-panel>
