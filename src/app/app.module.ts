@@ -21,6 +21,7 @@ import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { SettingsComponent } from './settings/settings.component';
+import { UserselectComponent } from './userselect/userselect.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SettingsComponent } from './settings/settings.component';
     LoginComponent,
     TagsComponent,
     ApplicationsComponent,
-    SettingsComponent
+    SettingsComponent,
+    UserselectComponent
   ],
   imports: [
     BrowserModule,

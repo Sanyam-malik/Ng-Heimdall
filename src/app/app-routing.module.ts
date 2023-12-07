@@ -4,6 +4,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TagsComponent } from './tags/tags.component';
 import { ApplicationsComponent } from './applications/applications.component';
+import { UsersComponent } from './users/users.component';
+import { UserselectComponent } from './userselect/userselect.component';
 
 const routes: Routes = [
   {
@@ -26,7 +28,15 @@ const routes: Routes = [
   {
     path: 'applications',
     component: ApplicationsComponent
-  }
+  },
+  {
+    path: 'users',
+    component: UsersComponent
+  },
+  {
+    path: 'userselect',
+    component: UserselectComponent
+  },
 ];
 
 @NgModule({

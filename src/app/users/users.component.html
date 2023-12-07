@@ -1,11 +1,44 @@
-<div class="userlist">
-    <a class="user" href="http://lordmaximus.duckdns.org:82/userselect/1">
-        <img class="user-img" src="http://lordmaximus.duckdns.org:82/img/heimdall-icon-small.png">
-        admin
-    </a>
-    <a class="user" href="http://lordmaximus.duckdns.org:82/userselect/2">
-        <img class="user-img" src="http://lordmaximus.duckdns.org:82/storage/avatars/CNq3Vz5wVijoT5pFZ0NRJKAtVUYIlpNj8WLEmXiB.jpg">
-        Sammy
-    </a>
+<app-switch-user></app-switch-user>
+<div>
+    <section class="module-container">
+        <p-card header="Users">
+            <p-table
+                    [value]="customers"
+                    [paginator]="true"
+                    [rows]="5"
+                    [showCurrentPageReport]="true"
+                    [tableStyle]="{ 'min-width': '50rem' }"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                    [rowsPerPageOptions]="[5, 10, 20]"
+                >
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th style="width:25%">Username</th>
+                            <th style="width:25%">Password</th>
+                            <th style="width:25%">Auto Login Url</th>
+                            <th style="width:25%">Action</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-customer>
+                        <tr>
+                            <td>{{ customer.name }}</td>
+                            <td>{{ customer.name }}</td>
+                            <td>{{ customer.country.name }}</td>
+                            <td>{{ customer.company }}</td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="paginatorleft">
+                        <p-button type="button" styleClass="p-button-text">
+                            <i class="pi pi-plus"></i>&nbsp;Add User
+                        </p-button>
+                    </ng-template>
+                    <ng-template pTemplate="paginatorright">
+                        <p-button type="button" styleClass="p-button-text">
+                            <i class="pi pi-cloud"></i>&nbsp;Export Users
+                        </p-button>
+                    </ng-template>
+            </p-table>
+        </p-card>
+    </section>
 </div>
- 
+<app-config-panel></app-config-panel>
