@@ -8,7 +8,7 @@ import { DataService } from '../../services/data.service';
 })
 export class ItemsComponent  implements OnInit {
   
-  items: any[];
+  items: any = {};
 
   constructor(private dataService: DataService){
 
@@ -16,7 +16,17 @@ export class ItemsComponent  implements OnInit {
 
   ngOnInit(): void {
     this.dataService.sendGETRequest('/applications').subscribe((response) => {
-      this.items = response['applications'];
+      const applications: any[] = response['applications'];
+      this.items = applications.reduce((result, obj) => {
+        const keyValue = obj['group_id'];
+        if (!result[keyValue]) {
+          result[keyValue] = [];
+        }
+        result[keyValue].push(obj);
+        return result;
+      }, {});
+      console.log(this.items);
+      //this.config_items = response['config_items'];
     }, (error) => {
       
     });
