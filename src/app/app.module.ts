@@ -22,6 +22,7 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { SettingsComponent } from './components/settings/settings.component';
 import { UserselectComponent } from './components/userselect/userselect.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { UserselectComponent } from './components/userselect/userselect.componen
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     SidebarModule,
     ButtonModule,
     TooltipModule,

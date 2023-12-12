@@ -1,9 +1,9 @@
 <app-switch-user></app-switch-user>
 <div>
-    <section class="module-container">
-        <p-card header="System">
+    <section *ngFor="let group of config_groups" class="module-container">
+        <p-card header="{{group['title']}}">
             <p-table
-                    [value]="customers"
+                    [value]="config_items[group['id']]"
                     [paginator]="false"
                     [rows]="5"
                     [showCurrentPageReport]="true"
@@ -18,11 +18,11 @@
                             <th style="width:25%">Action</th>
                         </tr>
                     </ng-template>
-                    <ng-template pTemplate="body" let-customer>
+                    <ng-template pTemplate="body" let-item>
                         <tr>
-                            <td>{{ customer.name }}</td>
-                            <td>{{ customer.country.name }}</td>
-                            <td>{{ customer.name }}</td>
+                            <td>{{ item.label }}</td>
+                            <td [innerHTML]="item.user_value ? item.user_value : item.value"></td>
+                            <td>{{ 'Edit' }}</td>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="paginatorleft">
@@ -34,110 +34,5 @@
             </p-table>
         </p-card> 
     </section>
-    
-    <section class="module-container">
-        <p-card header="Appearance">
-            <p-table
-                    [value]="customers"
-                    [paginator]="false"
-                    [rows]="5"
-                    [showCurrentPageReport]="true"
-                    [tableStyle]="{ 'min-width': '50rem' }"
-                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                    [rowsPerPageOptions]="[5, 10, 20]"
-                >
-                    <ng-template pTemplate="header">
-                        <tr>
-                            <th style="width:25%">Label</th>
-                            <th style="width:25%">Value</th>
-                            <th style="width:25%">Action</th>
-                        </tr>
-                    </ng-template>
-                    <ng-template pTemplate="body" let-customer>
-                        <tr>
-                            <td>{{ customer.name }}</td>
-                            <td>{{ customer.name }}</td>
-                            <td>{{ customer.country.name }}</td>
-                        </tr>
-                    </ng-template>
-                    <ng-template pTemplate="paginatorleft">
-                        
-                    </ng-template>
-                    <ng-template pTemplate="paginatorright">
-                        
-                    </ng-template>
-            </p-table>
-        </p-card> 
-    </section>
-    
-    <section class="module-container">
-        <p-card header="Miscellaneous">
-            <p-table
-                    [value]="customers"
-                    [paginator]="false"
-                    [rows]="5"
-                    [showCurrentPageReport]="true"
-                    [tableStyle]="{ 'min-width': '50rem' }"
-                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                    [rowsPerPageOptions]="[5, 10, 20]"
-                >
-                    <ng-template pTemplate="header">
-                        <tr>
-                            <th style="width:25%">Label</th>
-                            <th style="width:25%">Value</th>
-                            <th style="width:25%">Action</th>
-                        </tr>
-                    </ng-template>
-                    <ng-template pTemplate="body" let-customer>
-                        <tr>
-                            <td>{{ customer.name }}</td>
-                            <td>{{ customer.country.name }}</td>
-                            <td>{{ customer.name }}</td>
-                        </tr>
-                    </ng-template>
-                    <ng-template pTemplate="paginatorleft">
-                        
-                    </ng-template>
-                    <ng-template pTemplate="paginatorright">
-                        
-                    </ng-template>
-            </p-table>
-        </p-card> 
-    </section>
-    
-    <section class="module-container">
-        <p-card header="Advanced">
-            <p-table
-                    [value]="customers"
-                    [paginator]="false"
-                    [rows]="5"
-                    [showCurrentPageReport]="true"
-                    [tableStyle]="{ 'min-width': '50rem' }"
-                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                    [rowsPerPageOptions]="[5, 10, 20]"
-                >
-                    <ng-template pTemplate="header">
-                        <tr>
-                            <th style="width:25%">Label</th>
-                            <th style="width:25%">Value</th>
-                            <th style="width:25%">Action</th>
-                        </tr>
-                    </ng-template>
-                    <ng-template pTemplate="body" let-customer>
-                        <tr>
-                            <td>{{ customer.name }}</td>
-                            <td>{{ customer.name }}</td>
-                            <td>{{ customer.country.name }}</td>
-                        </tr>
-                    </ng-template>
-                    <ng-template pTemplate="paginatorleft">
-                        
-                    </ng-template>
-                    <ng-template pTemplate="paginatorright">
-                        
-                    </ng-template>
-            </p-table>
-        </p-card> 
-    </section>    
 </div>
 <app-config-panel></app-config-panel>
