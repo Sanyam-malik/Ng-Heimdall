@@ -21,7 +21,21 @@
                     <ng-template pTemplate="body" let-item>
                         <tr>
                             <td>{{ item.label }}</td>
-                            <td [innerHTML]="item.user_value ? item.user_value : item.value"></td>
+                            
+                            <td>
+                                <span *ngIf="item.type=='text' || item.type=='select'" [innerHTML]="item.user_value ? item.user_value : item.value"></span>
+                                <span *ngIf="item.type=='boolean'">
+                                    <ng-container *ngIf="item.user_value">
+                                        {{ item.user_value==1 ? "enabled" : "disabled" }}
+                                    </ng-container>
+                                    <ng-container *ngIf="!item.user_value">
+                                        {{ item.value==1 ? "enabled" : "disabled" }}
+                                    </ng-container>
+                                </span>
+                                <span *ngIf="item.type!='text' && item.type!='select' && item.type!='boolean'">
+                                    <a href="">View</a>
+                                </span>
+                            </td>
                             <td>{{ 'Edit' }}</td>
                         </tr>
                     </ng-template>

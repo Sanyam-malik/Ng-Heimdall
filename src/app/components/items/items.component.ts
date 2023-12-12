@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -7,26 +7,30 @@ import { DataService } from '../../services/data.service';
   styleUrl: './items.component.scss'
 })
 export class ItemsComponent  implements OnInit {
-  
-  items: any = {};
+  @Input("tag") tag: string;
+
+  items: any = [];
+  tags: any = [];
 
   constructor(private dataService: DataService){
-
+    
   }
 
   ngOnInit(): void {
-    this.dataService.sendGETRequest('/applications').subscribe((response) => {
-      const applications: any[] = response['applications'];
-      this.items = applications.reduce((result, obj) => {
-        const keyValue = obj['group_id'];
-        if (!result[keyValue]) {
-          result[keyValue] = [];
-        }
-        result[keyValue].push(obj);
-        return result;
-      }, {});
-      console.log(this.items);
-      //this.config_items = response['config_items'];
+    this.getTags();
+  }
+
+  getTags(){
+    var url = "/tags";
+    if(this.tag.length > 0) {
+      url = url+"/"+this.tag.toLowerCase();
+    }
+    this.dataService.sendGETRequest(url).subscribe((response) => {
+      const tags: any[] = response['tags'];
+      this.tags = tags;
+      for(var key of this.tags) {
+        this.items = key['items']
+      }
     }, (error) => {
       
     });
