@@ -78,7 +78,7 @@ button, input, optgroup, select, textarea {
     border-bottom-left-radius: 10px;
     box-shadow: rgba(255, 255, 255, 0.1) -1px 1px 1px 0, rgba(255, 255, 255, 0.1) 0 -1px 1px 0, rgba(0, 0, 0, 0.1) -1px 0 20px 5px;
     background-color: rgba(40, 40, 40, 0.25);
-    backdrop-filter: blur(10px);
+    //backdrop-filter: blur(10px);
     a {
         align-items: center;
         border: 1px solid transparent;
@@ -142,8 +142,8 @@ button, input, optgroup, select, textarea {
     border: none;
     outline: none;
     background-color: rgba(119, 75, 114, 0.31) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    //backdrop-filter: blur(10px);
+    //-webkit-backdrop-filter: blur(10px);
     display: flex;
     margin: 50px auto;
     max-width: 50rem;
@@ -217,7 +217,7 @@ button, input, optgroup, select, textarea {
 
 .item:hover {
     transform: scale(1.1);
-    background-color: rgba(125, 75, 114, 0.31) !important;
+    filter: brightness(90%);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 60px 40px -7px !important;
 }
 
@@ -240,12 +240,12 @@ button, input, optgroup, select, textarea {
     transition: all 0.25s ease-in-out;
         transition-property: all;
     transition-property: transform, box-shadow, background-color;
-    background-color: rgba(119, 75, 114, 0.31) !important;
-    backdrop-filter: blur(10px);
+    //background-color: rgba(119, 75, 114, 0.31);
+    //backdrop-filter: blur(10px);
     ::after {
+        background: hsla(0,0%,100%,.1);
         height: 100px;
         opacity: 0.2;
-        background: hsla(0, 0%, 100%, 0.09);
         border-radius: 50%;
         box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.11);
         content: "";
@@ -405,8 +405,8 @@ svg:not(:root).svg-inline--fa {
     border: none;
     outline: none;
     background-color: rgba(119, 75, 114, 0.31) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    //backdrop-filter: blur(10px);
+    //-webkit-backdrop-filter: blur(10px);
     display: flex;
     margin: 50px auto;
     max-width: 80rem;
